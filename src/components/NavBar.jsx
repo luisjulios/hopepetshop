@@ -24,7 +24,7 @@ const navbarStyle = {
     justifyContent: 'center',
     alignItems: 'center',
   }
-function NavBar() {
+const NavBar = () => {
   return (
     <nav style={navbarStyle}>
       <ul style={ulStyle}>
