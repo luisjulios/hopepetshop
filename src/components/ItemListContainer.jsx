@@ -6,7 +6,7 @@ function ItemListContainer({greeting}) {
   return (
     <section>
       {greeting}
-      <ItemCount/>
+      <ItemCount stock={10} initial={1}/>
     </section>
   )
 }

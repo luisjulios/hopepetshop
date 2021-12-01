@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
 
-function ItemCount({stock, initial = 1, onAdd}) {
+function ItemCount({stock, initial, onAdd}) {
   const [quantity, setQuantity] = useState(initial);
   
   const addQuantity = () => {
-    setQuantity(quantity + 1);
+    setQuantity(prev => prev + 1);
     if (quantity === stock) {
       setQuantity(quantity);
     }
   }
   const removeQuantity = () => {
-    setQuantity(quantity - 1);
+    setQuantity(prev => prev - 1);
     if (quantity === 1) {
       setQuantity(1);
     }
@@ -20,7 +20,7 @@ function ItemCount({stock, initial = 1, onAdd}) {
       <p>Product Name</p>
       <div className="buttons">
       <button className="remove" onClick={removeQuantity}>-</button>
-      <input type="number" className="quantity" value={quantity} onChange={()=>{console.log(quantity);}}/>
+      <input className="quantity" value={quantity} onChange={()=>{console.log(quantity);}}/>
       <button className="add" onClick={addQuantity}>+</button>
       </div>
       <button type="submit" className="addCart" onClick={onAdd}>Agregar al carrito</button>
