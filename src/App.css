@@ -8,7 +8,6 @@
   list-style: none;
   text-decoration: none;
 }
-
 @media only screen and (min-width: 375px) {
   header{
     background-color: #F2C791;
@@ -63,7 +62,7 @@
   .logo:hover {
     transform: scale(1.2);
   }
-  section {
+  main {
     text-align: center;
     color:#F2C791;
     font-size: 14px;
@@ -168,19 +167,16 @@
   .rrss {
     width: 100%;
     height: 6rem;
-    margin: .5rem;
     padding: 1rem;
   }
   .footerNav {
     width: 100%;
     height: 6rem;
-    margin: .5rem;
     padding: 1rem;
   }
   .contacto {
     width: 100%;
     height: 6rem;
-    margin: .5rem;
     padding: 1rem;
   }
   .footerCopy{
@@ -189,10 +185,10 @@
     width: 100%;
     height: 9rem;
     font-weight: 400;
-    font-size: .7rem;
+    font-size: .9rem;
     text-align: center;
     padding: 1.5rem;
-    margin-top: .5rem;
+    margin-top: 2rem;
   }
   .fooUl {
     width: 100%;
