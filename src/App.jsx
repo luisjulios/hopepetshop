@@ -3,6 +3,7 @@ import Logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <img src={Logo} alt="Logo" className="logo"/>
       </header>
       <ItemListContainer greeting="Bienvenido a HopePetshop, lo mejor para tu mascota!"/>
+      <Footer/>
     </div>
   );
 }

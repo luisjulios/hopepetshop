@@ -22,7 +22,7 @@
     height: 7vh;
     width: 100%;
   }
-  ul {
+  .navUl {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,7 +30,7 @@
     height: 7vh;
     padding: 0;
   }
-  li {
+  .navUlLi {
     height: 100%;
     width: 100%;
     display: flex;
@@ -39,11 +39,11 @@
     align-items: center;
     text-align: center;
     border: 2px solid #F2C791;
-    font-size: 12px;
+    font-size: 8px;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
   }
-  li:hover {
+  .navUlLi:hover {
     background-color: #F2C791;
     font-weight: 500;
     border: 1px solid #fff;
@@ -66,35 +66,55 @@
   section {
     text-align: center;
     color:#F2C791;
-    font-size: 20px;
+    font-size: 14px;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;    
     background-color: #fff;
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
   }
+  .itemList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
   .cardProduct {
-    padding: 1rem;
-    margin: 2rem 0;
-    height: auto;
-    width: 20rem;
+    padding: .5rem;
+    margin: 1rem;
+    height: 16rem;
+    width: 15rem;
     border: 1px solid #F2C791;
     border-radius: 1rem;
     font-weight: 500;
-    background-color: #f1cc9f1f;
+    background-color: #f1cc9f15;
   }
-
+  .imgProduct {
+    width: 40%;
+    margin: .4rem;
+  }
+  .nameProduct {
+    font-size: .7rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+  }
+  .priceProduct {
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+  }
   .remove {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     color: #000;
     background-color: #fff;
-    font-size: 1rem;
+    font-size: .5rem;
     font-weight: 500;
     border: 1px solid #F2C791;
     border-radius: 1rem;
@@ -102,33 +122,104 @@
   .quantity {
     text-align: center;
     width: 5rem;
-    height: 2rem;
+    height: 1.5rem;
     border: 1px solid #F2C791;
     background-color: #fff;
     font-weight: 400;
-    margin: 0.5rem;
+    margin: 0.4rem;
     border-radius: .2rem;
   }
   .add {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     color: #000;
     background-color: #fff;
-    font-size: 1rem;
+    font-size: .5rem;
     font-weight: 500;
     border: 1px solid #F2C791;
     border-radius: 1rem;
   }
   .addCart {
-    width: 13rem;
-    height: 2rem;
-    margin: 1rem;
+    width: 9rem;
+    height: 1.5rem;
+    margin: .5rem;
     color: #fff;
     background-color: #F2C791;
-    font-size: 1rem;
+    font-size: .6rem;
     font-weight: 700;
     border: 1px solid #fff;
     border-radius: .3rem;
+  }
+  footer {
+    background-color: #f1cc9f;
+    color: #fff;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Raleway', sans-serif;
+  }
+  h4 {
+    font-weight: 700;
+    margin: 1rem;
+    font-size: 10px;
+  }
+  .rrss {
+    width: 100%;
+    height: 6rem;
+    margin: .5rem;
+    padding: 1rem;
+  }
+  .footerNav {
+    width: 100%;
+    height: 6rem;
+    margin: .5rem;
+    padding: 1rem;
+  }
+  .contacto {
+    width: 100%;
+    height: 6rem;
+    margin: .5rem;
+    padding: 1rem;
+  }
+  .footerCopy{
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    height: 9rem;
+    font-weight: 400;
+    font-size: .7rem;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: .5rem;
+  }
+  .fooUl {
+    width: 100%;
+    padding: 0 0 0 1rem;
+  }
+  .loading {
+    animation: loading 2s infinite;
+    margin: 3rem;
+    width: 9rem;
+    height: 9rem;
+  }
+  @keyframes loading {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: translateY(-50%);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
 

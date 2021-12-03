@@ -1,0 +1,18 @@
+[
+  {"id":1, "name":"CHAMPION DOG ADULTO CARNE CEREAL 8 X 1,5 KG", "price":2000, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":6},
+  {"id":2, "name":"CHAMPION DOG ADULTO RAZA PEQUEÑA 8 KG", "price":10500, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":1},
+  {"id":3, "name":"CHAMPION DOG CACHORRO 8 KG", "price":10500, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":2},
+  {"id":4, "name":"CUBICAT 20KG", "price":20000, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":1},
+  {"id":5, "name":"CHAMPION CAT POUCH CARNE", "price":500, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":11},
+  {"id":6, "name":"CHAMPION DOG POUCH CARNE", "price":500, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":1},
+  {"id":7, "name":"ARENA SANITARIA 5KG", "price":5000, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":0},
+  {"id":8, "name":"CAT CHOW OCEAN", "price":4000, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":1},
+  {"id":9, "name":"AGILITY CAT URINARY 1.5 KG", "price":6700, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":2},
+  {"id":10, "name":"AGILITY CAT CONTROL PESO 1.5 KG", "price":8700, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":2},
+  {"id":11, "name":"WHISKAS CARNE 1KG", "price":3800, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":0},
+  {"id":12, "name":"ARENA AGLUTINANTE VIP", "price":3400, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":2},
+  {"id":13, "name":"RAZA GATO REDUCIDO EN CALORIAS", "price":3500, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":2},
+  {"id":14, "name":"SACHET WHISKAS SALMÓN", "price":550, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":12},
+  {"id":15, "name":"SACHET WHISKAS POLLO", "price":550, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":12},
+  {"id":16, "name":"PALA ARENA", "price":2000, "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/240px-Imagen_no_disponible.svg.png", "stock":2}
+]

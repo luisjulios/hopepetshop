@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function ItemCount({stock, initial, onAdd}) {
+const ItemCount = ({stock, initial, onAdd}) => {
   const [quantity, setQuantity] = useState(initial);
   
   const addQuantity = () => {
@@ -15,16 +15,16 @@ function ItemCount({stock, initial, onAdd}) {
       setQuantity(1);
     }
   }
+
   return (
-    <form action="#" className="formProduct">
-      <p>Product Name</p>
+    <>
       <div className="buttons">
       <button className="remove" onClick={removeQuantity}>-</button>
-      <input className="quantity" value={quantity} onChange={()=>{console.log(quantity);}}/>
+      <input className="quantity" value={quantity} readOnly={true}/>
       <button className="add" onClick={addQuantity}>+</button>
       </div>
       <button type="submit" className="addCart" onClick={onAdd}>Agregar al carrito</button>
-    </form>
+    </>
   )
 }
 
