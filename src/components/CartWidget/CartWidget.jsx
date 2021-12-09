@@ -1,6 +1,4 @@
-import React from "react";
-
-  const CartWidget = () => {
+const CartWidget = () => {
   return (
       <li className="navUlLi">
         <a href="/">

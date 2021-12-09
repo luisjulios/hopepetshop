@@ -1,17 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Footer from './components/Footer/Footer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <NavBar/>
-        <img src={Logo} alt="Logo" className="logo"/>
-      </header>
+      <Header/>
+      <ItemDetailContainer/>
       <ItemListContainer greeting="Bienvenido a HopePetshop, lo mejor para tu mascota!"/>
       <Footer/>
     </div>
