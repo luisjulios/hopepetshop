@@ -1,7 +1,9 @@
 import {useState, useEffect} from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import stock from '../../assets/stock.json';
-import Loading from '../../assets/loading.svg';
+import Loading from '../../assets/images/loading.svg';
+import Favorites from "../Favorites/Favorites";
 
 const getFetched = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -9,21 +11,35 @@ const getFetched = new Promise((resolve, reject) => {
   }, 3000)
 });
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({nameCategory, greetings}) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  useEffect(() => {
-    getFetched.then(data => setProducts(data))
-    .catch(err => console.log(err))
-    .finally(() => setLoading(false))
-  }, []);
+  const {idCategory} = useParams();
   
+  useEffect(() => {
+    if(idCategory){
+      getFetched.then(data => {
+        setProducts(data.filter(prod => prod.category === idCategory));
+        setLoading(false);
+      })
+    } else {
+      setProducts(stock);
+      setLoading(false);
+    }
+  }, [idCategory]);
+  
+  if (idCategory === 'michis') {
+    nameCategory = 'Michis';
+  } else if (idCategory === 'firulais') {
+    nameCategory = 'Firulais';
+  }
   return (
     <main>
-      <h2>{greeting}</h2>
+      <h2>{nameCategory || greetings}</h2>
       {loading ? <img src={Loading} alt="Cargando" className="loading"/>: 
       <ItemList products={products}/>}
+      <Favorites products={products}/>
     </main>
   )
 };

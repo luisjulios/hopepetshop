@@ -1,15 +1,16 @@
-import ItemCount from '../ItemCount/ItemCount'
+import {Link} from 'react-router-dom';
 
-const loadImage = (imageName) => (require(`../../assets/${imageName}`).default);
+const loadImage = (imageName) => (require(`../../assets/images/${imageName}`).default);
 
 const Item = ({product}) => {
 
   return (
-    <div className="cardProduct">
-      <img src={loadImage(`${product.image}`)} alt="Producto" className="imgCardProduct"/>
-      <h3 className="nameProduct" key={product.id}>{product.name}</h3>
-      <h2 className="priceProduct">$ {product.price}</h2>
-      <ItemCount stock={product.stock} initial={1}/>
+    <div className="cardProduct"  key={product.id}>
+      <img src={loadImage(`${product.image}`)} alt="Imagen de producto" className="imgCardProduct"/>
+      <h3 className="nameProduct">{product.name}</h3>
+      <h3 className="priceProduct">$ {product.price}</h3>
+      <Link to={`/details/${product.id}`}><button className='btnVerMas' >Detalles</button></Link>
+      <hr/>
     </div>
   )
 }

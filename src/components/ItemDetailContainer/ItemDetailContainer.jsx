@@ -1,36 +1,34 @@
 import {useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import stock from '../../assets/stock.json';
-import Loading from '../../assets/loading.svg';
+import Loading from '../../assets/images/loading.svg';
+import Favorites from '../Favorites/Favorites';
 
 const getItem = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve(stock.find(item => item.id === 2));
+    resolve(stock);
   }, 2000)
 });
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const {idProd} = useParams();
+  
   useEffect(() => {
-    getItem.then(data => setProduct(data))
-    .catch(err => console.log(err))
-    .finally(() => setLoading(false))
-  }, []);
+    getItem.then(data => {
+      setProduct(data.find(item => item.id === parseInt(idProd)));
+      setLoading(false);
+    })
+  }, [idProd]);
   
   return (
     <section className="sectionDetail">
       {loading ? <img src={Loading} alt="loading" className="loading"/> 
       : 
-      <ItemDetail
-        id={product.id}
-        name={product.name}
-        image={product.image}
-        description={product.description}
-        price={product.price}
-        stock={product.stock}        
-        />}
+      <ItemDetail product={product}/>}
+      <Favorites products={product}/>
     </section>
   )
 }

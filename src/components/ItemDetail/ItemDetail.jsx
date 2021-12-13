@@ -1,15 +1,15 @@
 import ItemCount from "../ItemCount/ItemCount";
 
-const loadImage = (imageName) => (require(`../../assets/${imageName}`).default);
+const loadImage = (imageName) => (require(`../../assets/images/${imageName}`).default);
 
-const ItemDetail = ({id, name, description, price, image, stock}) => {
+const ItemDetail = ({product}) => {
   return (
-    <div className="itemDetail">
-      <h2 className="nameDetailProduct">{name}</h2>
-      <img src={loadImage(`${image}`)} alt={name} className="imgDetailProduct"/>
-      <p className="priceDetailProduct">Precio: ${price}</p>
-      <p className="descriptionDetailProduct">{description}</p>
-      <ItemCount stock={stock} initial={1}/>
+    <div className="itemDetail" key={product.id}>
+      <h2 className="nameDetailProduct">{product.name}</h2>
+      <img src={loadImage(`${product.image}`)} alt="Imagen detalle de producto" className="imgDetailProduct"/>
+      <p className="priceDetailProduct">Precio: ${product.price}</p>
+      <p className="descriptionDetailProduct">{product.description}</p>
+      <ItemCount stock={product.stock} initial={1}/>
     </div>
   )
 }
