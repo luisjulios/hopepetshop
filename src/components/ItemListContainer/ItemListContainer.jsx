@@ -37,7 +37,8 @@ const ItemListContainer = ({nameCategory, greetings}) => {
   return (
     <main>
       <h2>{nameCategory || greetings}</h2>
-      {loading ? <img src={Loading} alt="Cargando" className="loading"/>: 
+      {loading ? <img src={Loading} alt="Cargando" className="loading"/>
+      : 
       <ItemList products={products}/>}
       <Favorites products={products}/>
     </main>

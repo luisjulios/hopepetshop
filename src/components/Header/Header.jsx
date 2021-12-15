@@ -8,10 +8,10 @@ const Header = () => {
     <>
       <header className='headerMD'>
         <NavBar />
-        <Link className='brand' to='/home'><h1>HopePetshop<img src={Logo} alt="Logo de marca Hope Petshop" className="logo" /></h1></Link>
+        <Link className='brand' to='/'><h1>HopePetshop<img src={Logo} alt="Logo de marca Hope Petshop" className="logo" /></h1></Link>
       </header>
       <header className='headerL'>
-      <Link className='brand' to='/home'><h1>HopePetshop<img src={Logo} alt="Logo de marca Hope Petshop" className="logo" /></h1></Link>
+      <Link className='brand' to='/'><h1>HopePetshop<img src={Logo} alt="Logo de marca Hope Petshop" className="logo" /></h1></Link>
         <div className='innerHeader'>
           <div className="rrss">
             <ul className="fooUl">
