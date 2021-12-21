@@ -8,9 +8,11 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
+import CartContextProvider from './context/CartContext';
 
 function App() {
   return (
+    <CartContextProvider>
     <BrowserRouter>
       <div className="App">
         <Header/>
@@ -35,6 +37,7 @@ function App() {
         <Footer/>
       </div>
     </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

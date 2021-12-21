@@ -2,7 +2,6 @@ import Logo from '../../assets/images/logo.svg';
 import NavBar from '../NavBar/NavBar';
 import { NavLink, Link } from 'react-router-dom';
 import Search from '../Search/Search';
-
 const Header = () => {
   return (
     <>

@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useState} from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/CartContext";
+
 const loadImage = (imageName) =>
   require(`../../assets/images/${imageName}`).default;
 
 const ItemDetail = ({ product, onAdd }) => {
   const [goCart, setGoCart] = useState(false);
 
+  const {addToCart} = useCartContext();
+
   onAdd = (quantity) => {
-    const message = `Agregaste ${quantity} ${
-      quantity > 1 ? "productos" : "producto"
-    } al carrito con un total de ${quantity * product.price}`;
-    alert(message);
+    addToCart({...product, quantity: quantity});
     setGoCart(true);
   };
-
   return (
     <div className="itemDetail" key={product.id}>
       <h2 className="nameDetailProduct">{product.name}</h2>
