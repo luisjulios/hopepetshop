@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import { useCartContext } from "../../context/CartContext";
 
-const loadImage = (imageName) =>
-  require(`../../assets/images/${imageName}`).default;
-
 const ItemDetail = ({ product, onAdd }) => {
   const [goCart, setGoCart] = useState(false);
 
@@ -15,11 +12,12 @@ const ItemDetail = ({ product, onAdd }) => {
     addToCart({...product, quantity: quantity});
     setGoCart(true);
   };
+  
   return (
     <div className="itemDetail" key={product.id}>
       <h2 className="nameDetailProduct">{product.name}</h2>
       <img
-        src={loadImage(`${product.image}`)}
+        src={product.image}
         alt="Imagen detalle de producto"
         className="imgDetailProduct"
       />

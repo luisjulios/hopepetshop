@@ -1,22 +1,17 @@
-import { useState, useEffect } from "react"
-import stock from "../../assets/stock.json"
+import { useState, useEffect, memo } from "react"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import Item from '../Item/Item'
 
-const getFavorites = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(stock)
-  }, 1000)
-});
-
-
-const Favorites = ({product}) => {
+const Favorites = memo(({products}) => {
   const [favorites, setFavorites] = useState([])
-
   useEffect(() => {
-    getFavorites.then(data => {
-      setFavorites(data.filter(product => product.stock > 6))
+    const db = getFirestore();
+    const queryFavorites = query(collection(db, 'productos'), where('stock', '>', 6));
+    getDocs(queryFavorites)
+    .then(resp => { setFavorites( resp.docs.map(product => ({id: product.id, ...product.data()}))); 
     })
-  }, [])
+  }, []);
+
   return (
     <section className="favorites">
       <h3>Productos destacados</h3>
@@ -25,8 +20,8 @@ const Favorites = ({product}) => {
       </div>
     </section>
   )
-}
+})
 
-export default Favorites
+export default Favorites;
 
 // 

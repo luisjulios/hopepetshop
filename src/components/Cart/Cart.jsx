@@ -1,8 +1,5 @@
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import { Fragment } from "react";
-const loadImage = (imageName) =>
-  require(`../../assets/images/${imageName}`).default;
 const Cart = () => {
   const { cartList, removeFromCart, deleteFromCart, totalCart } =
     useCartContext();
@@ -10,10 +7,10 @@ const Cart = () => {
     <main>
       <h2>Carrito de Compras</h2>
       {cartList < 1 ? (
-        <Fragment>
+        <>
           <p>No hay productos en el carrito</p>
           <Link to="/all">Volver a la tienda</Link>
-        </Fragment>
+        </>
       ) : (
         <>
           <table>
@@ -31,7 +28,7 @@ const Cart = () => {
                 <tr key={product.id}>
                   <td>
                     <img
-                      src={loadImage(`${product.image}`)}
+                      src={product.image}
                       alt={product.name}
                       width="50rem"
                       height="50rem"

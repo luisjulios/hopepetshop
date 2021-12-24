@@ -22,8 +22,8 @@ const NavBar = () => {
               </svg>PRODUCTOS
             </NavLink>
             <ul>
-              <li> <NavLink className={({ isActive }) => isActive ? "isActive" : ""} to="/category/michis">MICHIS</NavLink> </li>
-              <li> <NavLink className={({ isActive }) => isActive ? "isActive" : ""} to="/category/firulais">FIRULAIS</NavLink> </li>
+              <li> <NavLink className={({ isActive }) => isActive ? "isActive" : ""} to="/category/gatos">Gatos</NavLink> </li>
+              <li> <NavLink className={({ isActive }) => isActive ? "isActive" : ""} to="/category/perros">Perros</NavLink> </li>
             </ul>
           </li>
           <CartWidget/>

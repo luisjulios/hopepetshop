@@ -1,4 +1,3 @@
-
 const Search = () => {
   return (
     <input type="search" name="search" className='search' placeholder='Buscar'/>

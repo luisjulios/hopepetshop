@@ -1,29 +1,25 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import stock from '../../assets/stock.json';
 import Loading from '../../assets/images/loading.svg';
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import Favorites from '../Favorites/Favorites';
 
-const getItem = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(stock);
-  }, 2000)
-});
-
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
   const {idProd} = useParams();
   
   useEffect(() => {
-    getItem.then(data => {
-      setProduct(data.find(item => item.id === parseInt(idProd)));
+    const db = getFirestore();
+    const queryProduct = doc(db, `productos/${idProd}`);
+    getDoc(queryProduct).then(resp => {
+      setProduct({id: resp.id, ...resp.data()}); 
       setLoading(false);
     })
   }, [idProd]);
   
-  return (
+    return (
     <section className="sectionDetail">
       {loading ? <img src={Loading} alt="loading" className="loading"/> 
       : 
@@ -33,4 +29,4 @@ const ItemDetailContainer = () => {
   )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
