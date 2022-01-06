@@ -1,15 +1,17 @@
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 const Cart = () => {
-  const { cartList, removeFromCart, deleteFromCart, totalCart } =
-    useCartContext();
+  const { cartList, emptyCart, deleteFromCart, totalCart } = useCartContext();
+
   return (
     <main>
       <h2>Carrito de Compras</h2>
       {cartList < 1 ? (
         <>
           <p>No hay productos en el carrito</p>
-          <Link to="/all">Volver a la tienda</Link>
+          <Link to="/all" className="backStore">
+            Volver a la tienda
+          </Link>
         </>
       ) : (
         <>
@@ -26,21 +28,17 @@ const Cart = () => {
             <tbody>
               {cartList.map((product) => (
                 <tr key={product.id}>
-                  <td>
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      width="50rem"
-                      height="50rem"
-                    />
+                  <td className="d-flex flex-column align-items-center">
+                    <img src={product.image} alt={product.name} />
+                    <h6>{product.name}</h6>
                   </td>
-                  <td>{product.price}</td>
+                  <td>${product.price}</td>
                   <td>{product.quantity}</td>
-                  <td>{product.quantity * product.price}</td>
+                  <td>${product.quantity * product.price}</td>
                   <td>
                     <button
                       onClick={() => deleteFromCart(product)}
-                      className="button-delete"
+                      className="btn-delete"
                     >
                       X
                     </button>
@@ -49,9 +47,18 @@ const Cart = () => {
               ))}
             </tbody>
           </table>
-          <button onClick={removeFromCart}>Vaciar carrito</button>
-          <p>Total: ${totalCart()}</p>
-          <Link to="/checkout">Terminar compra</Link>
+          <button onClick={emptyCart} className="btn-empty">
+            Vaciar carrito
+          </button>
+          <p>
+            Total: ${totalCart() < 20000 ? totalCart() + 2500 : totalCart()}
+          </p>
+          <p className="infoCart">
+            Compras inferiores a $20.000, el envío es de $2.500.
+          </p>
+          <Link to="/checkout" className="checkout">
+            Terminar compra
+          </Link>
         </>
       )}
     </main>

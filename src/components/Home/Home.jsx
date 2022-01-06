@@ -1,16 +1,16 @@
-import Carrusel from "../Carousel/Carousel"
+import Carrusel from "../Carousel/Carousel";
 
 const Home = ({ greetings }) => {
   return (
     <main>
       <h2>{greetings}</h2>
-      <Carrusel/>
-        <p className="enunciado">
+      <Carrusel />
+      <p className="enunciado">
         Los alimentos favoritos de tu mascota sin moverte de tu casa.
         <small>ENVIO GRATIS (Pedido mínimo $20.000)</small>
-        </p>
+      </p>
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
