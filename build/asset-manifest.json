@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6ff66821.chunk.css",
+    "main.js": "/static/js/main.2bf3dfbe.chunk.js",
+    "main.js.map": "/static/js/main.2bf3dfbe.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.69cc84e2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.69cc84e2.js.map",
+    "static/css/2.90355180.chunk.css": "/static/css/2.90355180.chunk.css",
+    "static/js/2.e9bc782c.chunk.js": "/static/js/2.e9bc782c.chunk.js",
+    "static/js/2.e9bc782c.chunk.js.map": "/static/js/2.e9bc782c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.90355180.chunk.css.map": "/static/css/2.90355180.chunk.css.map",
+    "static/css/main.6ff66821.chunk.css.map": "/static/css/main.6ff66821.chunk.css.map",
+    "static/js/2.e9bc782c.chunk.js.LICENSE.txt": "/static/js/2.e9bc782c.chunk.js.LICENSE.txt",
+    "static/media/firulais.png": "/static/media/firulais.1395ce67.png",
+    "static/media/loading.svg": "/static/media/loading.ebbb7f26.svg",
+    "static/media/logo.svg": "/static/media/logo.208433ff.svg",
+    "static/media/michi.png": "/static/media/michi.6cb5cead.png",
+    "static/media/slide1.jpg": "/static/media/slide1.b1106710.jpg",
+    "static/media/slide2.jpg": "/static/media/slide2.e3a356c7.jpg",
+    "static/media/slide3.jpg": "/static/media/slide3.a9b888ce.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69cc84e2.js",
+    "static/css/2.90355180.chunk.css",
+    "static/js/2.e9bc782c.chunk.js",
+    "static/css/main.6ff66821.chunk.css",
+    "static/js/main.2bf3dfbe.chunk.js"
+  ]
+}

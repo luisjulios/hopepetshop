@@ -1,9 +1,30 @@
-import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
-import All from "../../assets/images/icons/All";
-import Home from "../../assets/images/icons/Home";
+import { FaHome, FaList } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import {
+  collection,
+  getDocs,
+  getFirestore
+} from "firebase/firestore";
 const NavBar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const db = getFirestore();
+    const queryCategory = collection(db, "productos");
+    getDocs(queryCategory).then((resp) => {
+        setCategories(
+          resp.docs
+            .map((item) => item.data().category)
+            .reduce(
+              (acc, item) => (acc.includes(item) ? acc : [...acc, item]),
+              []
+            )
+        );
+    });
+  }, []);
+
   return (
     <>
       <nav className="menu">
@@ -13,7 +34,7 @@ const NavBar = () => {
               className={({ isActive }) => (isActive ? "isActive" : "")}
               to="/"
             >
-              <Home />
+              <FaHome className="icon"/>
               INICIO
             </NavLink>
           </li>
@@ -22,28 +43,21 @@ const NavBar = () => {
               className={({ isActive }) => (isActive ? "isActive" : "")}
               to="/all"
             >
-              <All />
+              <FaList className="icon"/>
               PRODUCTOS
             </NavLink>
             <ul>
-              <li>
+              {categories.map((category) => (
+                <li key={category}>
                 {" "}
                 <NavLink
                   className={({ isActive }) => (isActive ? "isActive" : "")}
-                  to="/category/gatos"
+                  to={`/category/${category}`}
                 >
-                  Gatos
+                  {category}
                 </NavLink>{" "}
               </li>
-              <li>
-                {" "}
-                <NavLink
-                  className={({ isActive }) => (isActive ? "isActive" : "")}
-                  to="/category/perros"
-                >
-                  Perros
-                </NavLink>{" "}
-              </li>
+              ))}
             </ul>
           </li>
           <CartWidget />

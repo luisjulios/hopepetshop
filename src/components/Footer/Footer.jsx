@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Fb from "../../assets/images/icons/Fb";
-import Ig from "../../assets/images/icons/Ig";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -9,12 +9,12 @@ const Footer = () => {
         <ul className="fooUl">
           <li className="fooUlLi">
             <a href="/" className="link">
-              <Fb />
+              <FaFacebook />
             </a>
           </li>
           <li className="fooUlLi">
             <a href="/" className="link">
-              <Ig />
+              <FaInstagram />
             </a>
           </li>
         </ul>
@@ -25,11 +25,6 @@ const Footer = () => {
           <li className="fooUlLi">
             <Link className="link" to="/all">
               Todos los productos
-            </Link>
-          </li>
-          <li className="fooUlLi">
-            <Link className="link" to="/delivery">
-              Envíos
             </Link>
           </li>
         </ul>

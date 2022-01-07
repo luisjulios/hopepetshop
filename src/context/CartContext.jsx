@@ -25,7 +25,7 @@ function CartContextProvider({ children }) {
     setCartList(cartList.filter((item) => item.id !== product.id));
     toast(`Has eliminado ${product.name}`, {
       position: "top-center",
-      autoClose: 5000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -39,7 +39,7 @@ function CartContextProvider({ children }) {
     setCartList([]);
     toast('Sin productos en el carrito', {
       position: "top-center",
-      autoClose: 5000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
-import Cart from "../../assets/images/icons/Cart";
+import { FaShoppingCart } from "react-icons/fa";
+
 const CartWidget = () => {
   const { cartList, totalItems } = useCartContext();
   return (
@@ -10,7 +11,7 @@ const CartWidget = () => {
           className={({ isActive }) => (isActive ? "isActive" : "")}
           to="/cart"
         >
-          <Cart />
+          <FaShoppingCart className="icon"/>
           CARRITO {cartList.length === 0 ? "" : `(${totalItems()})`}
         </NavLink>
       </li>

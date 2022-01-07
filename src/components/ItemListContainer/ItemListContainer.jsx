@@ -9,8 +9,6 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import Favorites from "../Favorites/Favorites";
-
 const ItemListContainer = memo(({ nameCategory, greetings }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -53,7 +51,6 @@ const ItemListContainer = memo(({ nameCategory, greetings }) => {
       ) : (
         <ItemList products={products} />
       )}
-      <Favorites products={products} />
     </main>
   );
 });

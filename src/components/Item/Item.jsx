@@ -4,6 +4,7 @@ import { memo } from "react";
 const Item = memo(({ product }) => {
   return (
     <div className="cardProduct" key={product.id}>
+      <Link to={`/details/${product.id}`} className="linkItem">
       <img
         src={product.image}
         alt="Imagen de producto"
@@ -11,7 +12,6 @@ const Item = memo(({ product }) => {
       />
       <h3 className="nameProduct">{product.name}</h3>
       <h3 className="priceProduct">$ {product.price}</h3>
-      <Link to={`/details/${product.id}`}>
         <button className="btnVerMas">Detalles</button>
       </Link>
       <hr />

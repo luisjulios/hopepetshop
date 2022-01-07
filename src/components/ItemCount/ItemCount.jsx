@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { FaPlus, FaMinus } from "react-icons/fa";
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [quantity, setQuantity] = useState(initial);
 
@@ -15,6 +15,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       setQuantity(1);
     }
   };
+
   return (
     <>
       {stock === 0 ? (
@@ -25,11 +26,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <>
           <div className="buttons">
             <button className="remove" onClick={removeQuantity}>
-              -
+              <FaMinus className="faQuantity" />
             </button>
             <input className="quantity" value={quantity} readOnly={true} />
             <button className="add" onClick={addQuantity}>
-              +
+            <FaPlus className="faQuantity" />
             </button>
           </div>
           <button

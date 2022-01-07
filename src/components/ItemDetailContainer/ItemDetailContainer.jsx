@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loading from "../../assets/images/loading.svg";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-import Favorites from "../Favorites/Favorites";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -26,7 +25,6 @@ const ItemDetailContainer = () => {
       ) : (
         <ItemDetail product={product} />
       )}
-      <Favorites products={product} />
     </section>
   );
 };

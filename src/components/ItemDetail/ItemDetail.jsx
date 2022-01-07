@@ -14,7 +14,7 @@ const ItemDetail = ({ product, onAdd }) => {
     setGoCart(true);
     toast(`Has agregado ${quantity} ${product.name}`, {
       position: "top-center",
-      autoClose: 5000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
@@ -33,6 +33,7 @@ const ItemDetail = ({ product, onAdd }) => {
         className="imgDetailProduct"
       />
       <p className="priceDetailProduct">Precio: ${product.price}</p>
+      <p className="stock">Stock: {product.stock}</p>
       <p className="descriptionDetailProduct">{product.description}</p>
       {goCart === false ? (
         <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
