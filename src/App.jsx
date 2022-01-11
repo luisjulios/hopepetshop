@@ -21,7 +21,7 @@ function App() {
           <Header />
           <Routes>
             <Route
-              path="/"
+              path="/home"
               element={
                 <Home greetings="Bienvenido a HopePetshop, lo mejor para tu mascota!" />
               }
