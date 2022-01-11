@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hopepetshop/static/css/main.399a8807.chunk.css",
-    "main.js": "/hopepetshop/static/js/main.3444db55.chunk.js",
-    "main.js.map": "/hopepetshop/static/js/main.3444db55.chunk.js.map",
+    "main.js": "/hopepetshop/static/js/main.f69fea8f.chunk.js",
+    "main.js.map": "/hopepetshop/static/js/main.f69fea8f.chunk.js.map",
     "runtime-main.js": "/hopepetshop/static/js/runtime-main.c8e4a88e.js",
     "runtime-main.js.map": "/hopepetshop/static/js/runtime-main.c8e4a88e.js.map",
     "static/css/2.90355180.chunk.css": "/hopepetshop/static/css/2.90355180.chunk.css",
@@ -25,6 +25,6 @@
     "static/css/2.90355180.chunk.css",
     "static/js/2.69818976.chunk.js",
     "static/css/main.399a8807.chunk.css",
-    "static/js/main.3444db55.chunk.js"
+    "static/js/main.f69fea8f.chunk.js"
   ]
 }
