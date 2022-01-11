@@ -39,7 +39,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <NavLink className="cartL" to="/cart">
+          <NavLink className="cartL" to="/hopepetshop/cart">
             <FaShoppingCart />
             <small>{totalItems()}</small>
             <small>${totalCart()}</small>

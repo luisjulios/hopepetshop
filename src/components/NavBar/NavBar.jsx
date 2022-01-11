@@ -43,7 +43,7 @@ const NavBar = () => {
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? "isActive" : "")}
-              to="/all"
+              to="/hopepetshop/all"
             >
               <FaList className="icon"/>
               PRODUCTOS
@@ -53,7 +53,7 @@ const NavBar = () => {
                 <li key={category}>
                 <NavLink
                   className={({ isActive }) => (isActive ? "isActive" : "")}
-                  to={`/category/${category}`}
+                  to={`/hopepetshop/category/${category}`}
                 >
                   {category}
                 </NavLink>

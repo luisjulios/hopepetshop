@@ -13,7 +13,6 @@ const CheckoutForm = ({ order, createOrder, handleChange }) => {
     };
     getMunicipalities();
   }, []);
-
   return (
     <Formik
       initialValues={{
@@ -67,7 +66,6 @@ const CheckoutForm = ({ order, createOrder, handleChange }) => {
         } else if (!/^[a-zA-ZÀ-ÿ.\s]{3,40}$/.test(values.address)) {
           errors.address = "La dirección debe contener solo letras";
         }
-
         return errors;
       }}
       onSubmit={({ resetForm }) => {
@@ -80,22 +78,24 @@ const CheckoutForm = ({ order, createOrder, handleChange }) => {
           onSubmit={createOrder}
           onChange={handleChange}
         >
-          <Field type="text" name="name" id="name" placeholder="Nombre" />
+          <Field type="text" name="name" id="name" placeholder="Nombre" required/>
           <ErrorMessage name="name" component="p" className="errorInput" />
           <Field
             type="text"
             name="lastname"
             id="lastname"
             placeholder="Apellido"
+            required
           />
           <ErrorMessage name="lastname" component="p" className="errorInput" />
-          <Field type="text" name="rut" id="rut" placeholder="RUT"/>
+          <Field type="text" name="rut" id="rut" placeholder="RUT" required/>
           <ErrorMessage name="rut" component="p" className="errorInput" />
           <Field
             type="email"
             name="email"
             id="email"
             placeholder="Correo electrónico"
+            required
           />
           <ErrorMessage name="email" component="p" className="errorInput" />
           <Field
@@ -103,11 +103,12 @@ const CheckoutForm = ({ order, createOrder, handleChange }) => {
             name="repeatEmail"
             id="repeatEmail"
             placeholder="Confirma tu correo electrónico"
+            required
           />
           <ErrorMessage name="repeatEmail" component="p" className="errorInput" />
-          <Field type="tel" name="phone" id="phone" placeholder="Teléfono" />
+          <Field type="tel" name="phone" id="phone" placeholder="Teléfono" required/>
           <ErrorMessage name="phone" component="p" className="errorInput" />
-          <Field as="select" name="comuna" id="municipalities">
+          <Field as="select" name="comuna" id="municipalities" required>
             <option value="default">Seleccione su comuna</option>
             {municipalities.map((item) => (
               <option key={item.codigo} value={item.id}>
@@ -121,6 +122,7 @@ const CheckoutForm = ({ order, createOrder, handleChange }) => {
             name="address"
             id="address"
             placeholder="Dirección"
+            required
           />
           <ErrorMessage name="address" component="p" className="errorInput" />
           <button type="submit" className="btn-order">

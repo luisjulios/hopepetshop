@@ -38,7 +38,7 @@ const ItemDetail = ({ product, onAdd }) => {
       {goCart === false ? (
         <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
       ) : (
-        <Link className="goCart" to="/cart">
+        <Link className="goCart" to="/hopepetshop/cart">
           Ir al carrito
         </Link>
       )}

@@ -9,7 +9,7 @@ const CartWidget = () => {
       <li className="cartMD">
         <NavLink
           className={({ isActive }) => (isActive ? "isActive" : "")}
-          to="/cart"
+          to="/hopepetshop/cart"
         >
           <FaShoppingCart className="icon"/>
           CARRITO {cartList.length === 0 ? "" : `(${totalItems()})`}

@@ -10,7 +10,7 @@ const Cart = () => {
       {cartList < 1 ? (
         <>
           <p>No hay productos en el carrito</p>
-          <Link to="/all" className="backStore">
+          <Link to="/hopepetshop/all" className="backStore">
             Volver a la tienda
           </Link>
         </>
@@ -57,7 +57,7 @@ const Cart = () => {
           <p className="infoCart">
             Compras inferiores a $20.000, el envío es de $2.500.
           </p>
-          <Link to="/checkout" className="checkout">
+          <Link to="/hopepetshop/checkout" className="checkout">
             Terminar compra
           </Link>
         </>

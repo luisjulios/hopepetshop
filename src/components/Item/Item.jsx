@@ -4,7 +4,7 @@ import "./Item.css";
 const Item = memo(({ product }) => {
   return (
     <div className="cardProduct" key={product.id}>
-      <Link to={`/details/${product.id}`} className="linkItem">
+      <Link to={`/hopepetshop/details/${product.id}`} className="linkItem">
       <img
         src={product.image}
         alt="Imagen de producto"

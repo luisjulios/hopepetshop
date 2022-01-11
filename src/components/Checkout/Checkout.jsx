@@ -66,7 +66,7 @@ const Checkout = () => {
         <div className="order">
           {orderId ? (<CheckoutSuccess orderId={orderId} order={order}/>)
           :
-          (<Link to="/all" className="backStore">Volver a la tienda</Link>)}
+          (<Link to="/hopepetshop/all" className="backStore">Volver a la tienda</Link>)}
         </div>
       )}
     </section>

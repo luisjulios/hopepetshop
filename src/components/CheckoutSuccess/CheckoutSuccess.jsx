@@ -47,7 +47,7 @@ const CheckoutSuccess = ({ order, orderId }) => {
       <p><b>Total:</b> ${order.total}</p>
       </div>
     </div>
-    <Link to="/all">
+    <Link to="/hopepetshop/all">
     <button className="backStore">Volver a la tienda</button>
     </Link>
   </>

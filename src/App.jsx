@@ -27,18 +27,18 @@ function App() {
               }
             />
             <Route
-              path="/all"
+              path="/hopepetshop/all"
               element={
                 <ItemListContainer greetings="Bienvenido a HopePetshop, lo mejor para tu mascota!" />
               }
             />
             <Route
-              path="/category/:idCategory"
+              path="/hopepetshop/category/:idCategory"
               element={<ItemListContainer />}
             />
-            <Route path="/details/:idProd" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout/>}/>
+            <Route path="/hopepetshop/details/:idProd" element={<ItemDetailContainer />} />
+            <Route path="/hopepetshop/cart" element={<Cart />} />
+            <Route path="/hopepetshop/checkout" element={<Checkout/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

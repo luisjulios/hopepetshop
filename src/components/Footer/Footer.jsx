@@ -24,7 +24,7 @@ const Footer = () => {
         <h4>Navegación</h4>
         <ul className="fooUl">
           <li>
-            <Link className="link" to="/all">
+            <Link className="link" to="/hopepetshop/all">
               Todos los productos
             </Link>
           </li>
