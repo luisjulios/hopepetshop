@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <header className="headerMD">
-        <Link className="brand" to="/">
+        <Link className="brand" to="/hopepetshop/home">
           <h1>
             HopePetshop
             <img src={Logo} alt="Logo de marca Hope Petshop" className="logo" />
@@ -18,7 +18,7 @@ const Header = () => {
         <NavBar />
       </header>
       <header className="headerL">
-        <Link className="brand" to="/">
+        <Link className="brand" to="/hopepetshop/home">
           <h1>
             HopePetshop
             <img src={Logo} alt="Logo de marca Hope Petshop" className="logo" />

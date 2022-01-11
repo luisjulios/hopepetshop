@@ -34,7 +34,7 @@ const NavBar = () => {
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? "isActive" : "")}
-              to="/"
+              to="/hopepetshop/home"
             >
               <FaHome className="icon"/>
               INICIO
