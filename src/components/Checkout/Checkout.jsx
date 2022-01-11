@@ -1,22 +1,15 @@
 import { useState } from "react";
 import { useCartContext } from "../../context/CartContext";
-import { collection, addDoc, getFirestore } from "firebase/firestore";
+import { collection, addDoc, getFirestore, query, documentId, writeBatch, where, getDocs } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import  CheckoutSuccess  from "../CheckoutSuccess/CheckoutSuccess";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
-
+import './Checkout.css';
 const Checkout = () => {
   const { cartList, totalCart, emptyCart } = useCartContext();
   const [orderId, setOrderId] = useState("");
   const [order, setOrder] = useState({
-    name: "",
-    lastname: "",
-    rut: "",
-    email: "",
-    phone: "",
-    comuna: "",
-    address: "",
     date: new Date(),
     items: cartList.map((item) => ({
       id: item.id,
@@ -24,11 +17,12 @@ const Checkout = () => {
       quantity: item.quantity,
       price: item.price * item.quantity,
     })),
+    status: "Generada, pendiente de envío",
     quantity: cartList.reduce((acc, item) => acc + item.quantity, 0),
-    total: totalCart(),
+    total: totalCart() < 20000 ? totalCart() + 2500 : totalCart(),
   });
 
-  const generarOrden = async (e) => {
+  const createOrder = async (e) => {
     e.preventDefault();
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
@@ -39,11 +33,11 @@ const Checkout = () => {
         toast(`Su orden ${response.id} fue generada exitosamente`, {
           position: "top-center",
           autoClose: 3000,
-          hideProgressBar: true,
+          hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
           draggable: true,
-          progress: true,
+          progress: undefined,
           closeButton: false,
         });
       }
@@ -52,22 +46,24 @@ const Checkout = () => {
     } finally {
       emptyCart();
     }
+
+    const updateStock = query(
+      collection(db, "productos"),where(documentId(), "in", cartList.map((item) => item.id))
+    )
+    const batch = writeBatch(db);
+    getDocs(updateStock)
+    .then(resp => {resp.docs.forEach(res => batch.update(res.ref, { 
+        stock: res.data().stock - cartList.find(item => item.id === res.id).quantity}))
+      })
+    .then(() => batch.commit())
   };
-
-  const handleChange = (e) => {
-    setOrder({
-      ...order,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-
+  const handleChange = (e) => {setOrder({...order, [e.target.name]: e.target.value,})};
   return (
-    <section className="d-flex flex-column align-items-center">
+    <section className="d-flex flex-column align-items-center p-5">
       <h2>CheckOut</h2>
-      {cartList.length > 0 ? ( <CheckoutForm order={order} generarOrden={generarOrden} handleChange={handleChange}/>
+      {cartList.length > 0 ? ( <CheckoutForm order={order} createOrder={createOrder} handleChange={handleChange}/>
       ) : (
-        <div className="order-id">
+        <div className="order">
           {orderId ? (<CheckoutSuccess orderId={orderId} order={order}/>)
           :
           (<Link to="/all" className="backStore">Volver a la tienda</Link>)}

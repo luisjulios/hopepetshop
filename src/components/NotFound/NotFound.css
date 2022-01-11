@@ -1,0 +1,12 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  color: var(--color-primario);
+  margin: 4rem;
+}
+.error {
+  font-size: 4rem;
+}

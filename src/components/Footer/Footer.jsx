@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -7,13 +8,13 @@ const Footer = () => {
       <div className="rrss">
         <h4>Nuestras redes</h4>
         <ul className="fooUl">
-          <li className="fooUlLi">
+          <li>
             <a href="/" className="link">
               <FaFacebook />
             </a>
           </li>
-          <li className="fooUlLi">
-            <a href="/" className="link">
+          <li>
+            <a href="https://www.instagram.com/hopepetshopcl/" className="link">
               <FaInstagram />
             </a>
           </li>
@@ -22,7 +23,7 @@ const Footer = () => {
       <div className="footerNav">
         <h4>Navegación</h4>
         <ul className="fooUl">
-          <li className="fooUlLi">
+          <li>
             <Link className="link" to="/all">
               Todos los productos
             </Link>
@@ -32,12 +33,12 @@ const Footer = () => {
       <div className="contacto">
         <h4>Contacto</h4>
         <ul className="fooUl">
-          <li className="fooUlLi">
+          <li>
             <a className="link" href="/">
               +569-55597600
             </a>
           </li>
-          <li className="fooUlLi">
+          <li>
             <a className="link" href="/">
               hopepetshop@hopepetshop.cl
             </a>

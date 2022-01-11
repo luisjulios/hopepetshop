@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import { useCartContext } from "../../context/CartContext";
 import {toast} from 'react-toastify';
-
+import "./ItemDetail.css"
 const ItemDetail = ({ product, onAdd }) => {
   const [goCart, setGoCart] = useState(false);
 

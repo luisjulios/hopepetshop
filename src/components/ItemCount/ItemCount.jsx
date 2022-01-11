@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import "./ItemCount.css";
+
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [quantity, setQuantity] = useState(initial);
 
@@ -24,11 +26,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         </button>
       ) : (
         <>
-          <div className="buttons">
+          <div>
             <button className="remove" onClick={removeQuantity}>
               <FaMinus className="faQuantity" />
             </button>
-            <input className="quantity" value={quantity} readOnly={true} />
+            <input className="quantity" value={quantity} readOnly={true}/>
             <button className="add" onClick={addQuantity}>
             <FaPlus className="faQuantity" />
             </button>
@@ -36,7 +38,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           <button
             type="submit"
             className="addCart"
-            onClick={() => onAdd(quantity)}
+            onClick={() => onAdd(parseInt(quantity))}
           >
             Agregar al carrito
           </button>

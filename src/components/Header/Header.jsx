@@ -3,19 +3,19 @@ import NavBar from "../NavBar/NavBar";
 import { NavLink, Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import { FaFacebook, FaInstagram, FaShoppingCart } from "react-icons/fa";
-
+import "./Header.css";
 const Header = () => {
   const { totalCart, totalItems } = useCartContext();
   return (
     <>
       <header className="headerMD">
-        <NavBar />
         <Link className="brand" to="/">
           <h1>
             HopePetshop
             <img src={Logo} alt="Logo de marca Hope Petshop" className="logo" />
           </h1>
         </Link>
+        <NavBar />
       </header>
       <header className="headerL">
         <Link className="brand" to="/">
@@ -46,7 +46,7 @@ const Header = () => {
           </NavLink>
         </div>
       </header>
-
+      
       <div className="navbarL">
         <NavBar />
       </div>

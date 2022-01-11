@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loading from "../../assets/images/loading.svg";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-
+import "./ItemDetailContainer.css";
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);

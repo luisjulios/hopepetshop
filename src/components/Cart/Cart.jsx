@@ -1,5 +1,6 @@
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import "./Cart.css";
 const Cart = () => {
   const { cartList, emptyCart, deleteFromCart, totalCart } = useCartContext();
 
@@ -28,7 +29,7 @@ const Cart = () => {
             <tbody>
               {cartList.map((product) => (
                 <tr key={product.id}>
-                  <td className="d-flex flex-column align-items-center">
+                  <td>
                     <img src={product.image} alt={product.name} />
                     <h6>{product.name}</h6>
                   </td>

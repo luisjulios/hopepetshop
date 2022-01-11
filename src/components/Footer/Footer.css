@@ -1,0 +1,128 @@
+@media only screen and (min-width: 375px) {
+  footer {
+    background-color: var(--color-secundario);
+    color: #fff;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+  h4 {
+    font-weight: 700;
+    margin: 1rem;
+    font-size: 10px;
+  }
+  .rrss {
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+  }
+  .fooUl {
+    width: 100%;
+    padding: 0 0 0 1rem;
+  }
+  .footerNav {
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+  }
+  .contacto {
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+  }
+  .link {
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+  }
+  
+  .link:hover {
+    color: #fff;
+  }
+  .footerCopy {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    height: 9rem;
+    font-weight: 400;
+    font-size: .9rem;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    background-color: var(--color-secundario);
+    color: #fff;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 0;
+  }
+
+  h4 {
+    font-weight: 700;
+    margin: 1rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .link {
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .link:hover {
+    color: #fff;
+  }
+
+  .rrss {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .footerNav {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .contacto {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .footerCopy {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    height: 7rem;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .fooUl {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}

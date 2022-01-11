@@ -1,3 +1,4 @@
+import "./Carousel.css"
 const loadImage = (imageName) =>
   require(`../../assets/images/${imageName}`).default;
 

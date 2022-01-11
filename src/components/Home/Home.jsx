@@ -1,5 +1,5 @@
 import Carrusel from "../Carousel/Carousel";
-
+import "./Home.css";
 const Home = ({ greetings }) => {
   return (
     <main>

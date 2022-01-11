@@ -9,6 +9,8 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import "./ItemListContainer.css";
+
 const ItemListContainer = memo(({ nameCategory, greetings }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,6 +18,7 @@ const ItemListContainer = memo(({ nameCategory, greetings }) => {
 
   useEffect(() => {
     const db = getFirestore();
+    
     if (idCategory) {
       const queryProducts = query(
         collection(db, "productos"),

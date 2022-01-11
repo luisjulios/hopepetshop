@@ -7,6 +7,8 @@ import {
   getDocs,
   getFirestore
 } from "firebase/firestore";
+import './NavBar.css';
+
 const NavBar = () => {
   const [categories, setCategories] = useState([]);
 
@@ -49,13 +51,12 @@ const NavBar = () => {
             <ul>
               {categories.map((category) => (
                 <li key={category}>
-                {" "}
                 <NavLink
                   className={({ isActive }) => (isActive ? "isActive" : "")}
                   to={`/category/${category}`}
                 >
                   {category}
-                </NavLink>{" "}
+                </NavLink>
               </li>
               ))}
             </ul>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { memo } from "react";
-
+import "./Item.css";
 const Item = memo(({ product }) => {
   return (
     <div className="cardProduct" key={product.id}>
