@@ -10,6 +10,7 @@ import {
   where,
 } from "firebase/firestore";
 import "./ItemListContainer.css";
+import { cleanup } from "@testing-library/react";
 
 const ItemListContainer = memo(({ nameCategory, greetings }) => {
   const [products, setProducts] = useState([]);
@@ -39,6 +40,7 @@ const ItemListContainer = memo(({ nameCategory, greetings }) => {
         setLoading(false);
       });
     }
+    cleanup();
   }, [idCategory]);
 
   if (idCategory === "gatos") {

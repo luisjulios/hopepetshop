@@ -20,7 +20,24 @@
   width: 9rem;
   height: 9rem;
 }
-
+  .App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  ::-webkit-scrollbar {
+    width: 1em;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #7e82c511;
+    border-radius: 9em;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #8083bb;
+    border-radius: 9em;
+  }
 @keyframes loading {
   0% {
     transform: translateY(0);

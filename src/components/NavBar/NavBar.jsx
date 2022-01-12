@@ -34,7 +34,7 @@ const NavBar = () => {
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? "isActive" : "")}
-              to="/hopepetshop"
+              to="hopepetshop/"
             >
               <FaHome className="icon"/>
               INICIO
@@ -43,7 +43,7 @@ const NavBar = () => {
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? "isActive" : "")}
-              to="/hopepetshop/all"
+              to="hopepetshop/all"
             >
               <FaList className="icon"/>
               PRODUCTOS
@@ -53,7 +53,7 @@ const NavBar = () => {
                 <li key={category}>
                 <NavLink
                   className={({ isActive }) => (isActive ? "isActive" : "")}
-                  to={`/hopepetshop/category/${category}`}
+                  to={`hopepetshop/category/${category}`}
                 >
                   {category}
                 </NavLink>

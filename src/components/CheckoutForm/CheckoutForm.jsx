@@ -63,7 +63,7 @@ const CheckoutForm = ({ order, createOrder, handleChange }) => {
         }
         if (!values.address) {
           errors.address = "La dirección es requerida";
-        } else if (!/^[a-zA-ZÀ-ÿ.\s]{3,40}$/.test(values.address)) {
+        } else if (!/^[a-zA-Z0-9_.+-\s]{3,40}$/.test(values.address)) {
           errors.address = "La dirección debe contener solo letras";
         }
         return errors;

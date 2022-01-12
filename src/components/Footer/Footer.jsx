@@ -9,12 +9,12 @@ const Footer = () => {
         <h4>Nuestras redes</h4>
         <ul className="fooUl">
           <li>
-            <a href="/" className="link">
+            <a href="https://es-la.facebook.com/" className="link" target="_blank" rel="noreferrer">
               <FaFacebook />
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/hopepetshopcl/" className="link">
+            <a href="https://www.instagram.com/hopepetshopcl/" className="link" target="_blank" rel="noreferrer">
               <FaInstagram />
             </a>
           </li>
@@ -24,7 +24,7 @@ const Footer = () => {
         <h4>Navegación</h4>
         <ul className="fooUl">
           <li>
-            <Link className="link" to="/hopepetshop/all">
+            <Link className="link" to="hopepetshop/all">
               Todos los productos
             </Link>
           </li>
@@ -34,12 +34,12 @@ const Footer = () => {
         <h4>Contacto</h4>
         <ul className="fooUl">
           <li>
-            <a className="link" href="/">
+            <a className="link" href="https://api.whatsapp.com/send?phone=+56955597600">
               +569-55597600
             </a>
           </li>
           <li>
-            <a className="link" href="/">
+            <a className="link" href="mailto:hopepetshop@hopepetshop.cl" target="_blank" rel="noreferrer">
               hopepetshop@hopepetshop.cl
             </a>
           </li>

@@ -20,7 +20,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <>
-      {stock === 0 ? (
+      {stock <= 0 ? (
         <button className="outOfStock" disabled>
           No disponible
         </button>

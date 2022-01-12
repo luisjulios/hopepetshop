@@ -21,24 +21,24 @@ function App() {
           <Header />
           <Routes>
             <Route
-              path="/hopepetshop"
+              path="hopepetshop/"
               element={
                 <Home greetings="Bienvenido a HopePetshop, lo mejor para tu mascota!" />
               }
             />
             <Route
-              path="/hopepetshop/all"
+              path="hopepetshop/all"
               element={
                 <ItemListContainer greetings="Bienvenido a HopePetshop, lo mejor para tu mascota!" />
               }
             />
             <Route
-              path="/hopepetshop/category/:idCategory"
+              path="hopepetshop/category/:idCategory"
               element={<ItemListContainer />}
             />
-            <Route path="/hopepetshop/details/:idProd" element={<ItemDetailContainer />} />
-            <Route path="/hopepetshop/cart" element={<Cart />} />
-            <Route path="/hopepetshop/checkout" element={<Checkout/>}/>
+            <Route path="hopepetshop/details/:idProd" element={<ItemDetailContainer />} />
+            <Route path="hopepetshop/cart" element={<Cart />} />
+            <Route path="hopepetshop/checkout" element={<Checkout/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

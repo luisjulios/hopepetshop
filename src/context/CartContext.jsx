@@ -6,7 +6,7 @@ export const useCartContext = () => useContext(CartContext);
 
 function CartContextProvider({ children }) {
   const [cartList, setCartList] = useState([]);
-  
+
   function addToCart(product) {
     const index = cartList.findIndex((i) => i.id === product.id);
     if (index > -1) {
@@ -20,7 +20,6 @@ function CartContextProvider({ children }) {
       setCartList([...cartList, product]);
     }
   }
-
   function deleteFromCart(product) {
     setCartList(cartList.filter((item) => item.id !== product.id));
     toast(`Has eliminado ${product.name}`, {
@@ -52,9 +51,12 @@ function CartContextProvider({ children }) {
     return cartList.reduce((acc, item) => acc + item.quantity, 0);
   }
   function totalCart() {
-    return cartList.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    if ((cartList.reduce((acc, item) => acc + item.price * item.quantity, 0))  < 20000  && cartList.length > 0) {
+      return cartList.reduce((acc, item) => acc + item.price * item.quantity, 0) + 2500;
+    } else {
+      return cartList.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    }
   }
-
   return (
     <CartContext.Provider
       value={{

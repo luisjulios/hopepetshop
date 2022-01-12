@@ -22,6 +22,9 @@ const ItemDetail = ({ product, onAdd }) => {
       progress: undefined,
       closeButton: false
     })
+    setTimeout(() => {
+      setGoCart(false);
+    }, 3000);
   };
 
   return (

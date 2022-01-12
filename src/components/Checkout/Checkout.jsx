@@ -19,32 +19,47 @@ const Checkout = () => {
     })),
     status: "Generada, pendiente de envío",
     quantity: cartList.reduce((acc, item) => acc + item.quantity, 0),
-    total: totalCart() < 20000 ? totalCart() + 2500 : totalCart(),
+    total: totalCart(),
   });
 
   const createOrder = async (e) => {
     e.preventDefault();
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
-    try {
-      const response = await addDoc(orderCollection, order);
-      setOrderId(response.id);
-      if (response.id) {
-        toast(`Su orden ${response.id} fue generada exitosamente`, {
+    const validateStock = cartList.every((item) => item.quantity <= item.stock);
+    if (!validateStock) {
+      toast("No hay suficiente stock para algunos productos", {
           position: "top-center",
-          autoClose: 3000,
+          autoClose: false,
           hideProgressBar: false,
-          closeOnClick: true,
+          closeOnClick: false,
           pauseOnHover: false,
           draggable: true,
-          progress: undefined,
-          closeButton: false,
+          progress: true,
+          closeButton: true,
         });
+        return;
+    } else {
+      try {
+        const response = await addDoc(orderCollection, order);
+        setOrderId(response.id);
+        if (response.id) {
+          toast(`Su orden ${response.id} fue generada exitosamente`, {
+            position: "top-center",
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: true,
+            closeButton: false,
+          });
+        }
+      } catch (error) {
+        toast.error(error.message);
+      } finally {
+        emptyCart();
       }
-    } catch (error) {
-      toast.error(error.message);
-    } finally {
-      emptyCart();
     }
 
     const updateStock = query(
@@ -58,6 +73,7 @@ const Checkout = () => {
     .then(() => batch.commit())
   };
   const handleChange = (e) => {setOrder({...order, [e.target.name]: e.target.value,})};
+
   return (
     <section className="d-flex flex-column align-items-center p-5">
       <h2>CheckOut</h2>

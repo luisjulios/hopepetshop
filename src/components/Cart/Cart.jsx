@@ -1,9 +1,10 @@
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import "./Cart.css";
+
 const Cart = () => {
   const { cartList, emptyCart, deleteFromCart, totalCart } = useCartContext();
-
+  
   return (
     <main>
       <h2>Carrito de Compras</h2>
@@ -52,7 +53,7 @@ const Cart = () => {
             Vaciar carrito
           </button>
           <p>
-            Total: ${totalCart() < 20000 ? totalCart() + 2500 : totalCart()}
+            Total: ${totalCart()}
           </p>
           <p className="infoCart">
             Compras inferiores a $20.000, el envío es de $2.500.

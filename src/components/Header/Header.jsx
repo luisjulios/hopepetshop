@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <header className="headerMD">
-        <Link className="brand" to="/hopepetshop">
+        <Link className="brand" to="hopepetshop/">
           <h1>
             HopePetshop
             <img src={Logo} alt="Logo de marca Hope Petshop" className="logo" />
@@ -18,7 +18,7 @@ const Header = () => {
         <NavBar />
       </header>
       <header className="headerL">
-        <Link className="brand" to="/hopepetshop">
+        <Link className="brand" to="hopepetshop/">
           <h1>
             HopePetshop
             <img src={Logo} alt="Logo de marca Hope Petshop" className="logo" />
@@ -28,18 +28,18 @@ const Header = () => {
           <div className="rrss">
             <ul className="fooUl">
               <li className="fooUlLi">
-                <a href="/" className="link">
+                <a href="https://es-la.facebook.com/" className="link" target="_blank" rel="noreferrer">
                   <FaFacebook />
                 </a>
               </li>
               <li className="fooUlLL">
-                <a href="/" className="link">
+                <a href="https://www.instagram.com/hopepetshopcl/" className="link" target="_blank" rel="noreferrer">
                   <FaInstagram />
                 </a>
               </li>
             </ul>
           </div>
-          <NavLink className="cartL" to="/hopepetshop/cart">
+          <NavLink className="cartL" to="hopepetshop/cart">
             <FaShoppingCart />
             <small>{totalItems()}</small>
             <small>${totalCart()}</small>
