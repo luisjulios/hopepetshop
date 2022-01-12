@@ -66,12 +66,11 @@ Por último, un botón para volver a la tienda.
 
 ## Instalación
 *npm i*
+___
 *npm start*
 
 
-
-
-## Autor
+## Developer
 > Desarrollado por [Luis Julio](https://www.linkedin.com/in/antsth/).
 
 
