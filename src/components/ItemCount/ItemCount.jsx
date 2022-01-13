@@ -4,7 +4,7 @@ import "./ItemCount.css";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [quantity, setQuantity] = useState(initial);
-
+  
   const addQuantity = () => {
     setQuantity((prev) => prev + 1);
     if (quantity === stock) {

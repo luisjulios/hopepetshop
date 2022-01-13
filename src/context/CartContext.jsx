@@ -6,7 +6,32 @@ export const useCartContext = () => useContext(CartContext);
 
 function CartContextProvider({ children }) {
   const [cartList, setCartList] = useState([]);
+  
 
+  function addQuantity(product) {
+    const newCartList = cartList.map((item) => {
+      if (item.id === product.id) {
+        item.quantity += 1;
+        if (item.stock < item.quantity) {
+          item.quantity -= 1;
+        }
+      }
+      return item;
+    });
+    setCartList(newCartList);
+  }
+  function removeQuantity(product) {
+    const newCartList = cartList.map((item) => {
+      if (item.id === product.id) {
+        item.quantity -= 1;
+        if (item.quantity <= 0) {
+          item.quantity = 1;
+        }
+      }
+      return item;
+    });
+    setCartList(newCartList);
+  }
   function addToCart(product) {
     const index = cartList.findIndex((i) => i.id === product.id);
     if (index > -1) {
@@ -66,6 +91,8 @@ function CartContextProvider({ children }) {
         deleteFromCart,
         totalItems,
         totalCart,
+        addQuantity,
+        removeQuantity,
       }}
     >
       {children}

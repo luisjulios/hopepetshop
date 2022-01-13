@@ -1,9 +1,13 @@
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import "../ItemCount/ItemCount.css";
 import "./Cart.css";
 
+
 const Cart = () => {
-  const { cartList, emptyCart, deleteFromCart, totalCart } = useCartContext();
+
+  const { cartList, emptyCart, deleteFromCart, totalCart, addQuantity, removeQuantity } = useCartContext();
   
   return (
     <main>
@@ -35,7 +39,15 @@ const Cart = () => {
                     <h6>{product.name}</h6>
                   </td>
                   <td>${product.price}</td>
-                  <td>{product.quantity}</td>
+                  <td>
+                  <button className="remove" onClick={()=>{removeQuantity(product)}}>
+                    <FaMinus className="faQuantity" />
+                  </button>
+                    <input type="number"className="quantity" readOnly value={product.quantity}/>
+                  <button className="add" onClick={()=>{addQuantity(product)}}>
+                    <FaPlus className="faQuantity" />
+                  </button>
+                    </td>
                   <td>${product.quantity * product.price}</td>
                   <td>
                     <button
