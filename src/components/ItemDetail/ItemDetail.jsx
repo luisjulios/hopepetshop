@@ -10,9 +10,9 @@ const ItemDetail = ({ product, onAdd }) => {
   const { addToCart } = useCartContext();
 
   onAdd = (quantity) => {
-    addToCart({ ...product, quantity: quantity });
-    setGoCart(true);
-    toast(`Has agregado ${quantity} ${product.name}`, {
+     addToCart({ ...product, quantity: quantity });
+     setGoCart(true);
+     toast(`Has agregado ${quantity} ${product.name}`, {
       position: "top-center",
       autoClose: 2000,
       hideProgressBar: false,
@@ -22,9 +22,6 @@ const ItemDetail = ({ product, onAdd }) => {
       progress: undefined,
       closeButton: false
     })
-    setTimeout(() => {
-      setGoCart(false);
-    }, 3000);
   };
 
   return (
